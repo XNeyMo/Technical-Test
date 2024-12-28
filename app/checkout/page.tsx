@@ -75,7 +75,7 @@ export default function Checkout() {
     <>
       <Header />
 
-      <main className="px-16 flex flex-col gap-10 my-10">
+      <main className="px-5 md:px-16 flex flex-col gap-10 my-10">
         <div className="flex flex-col gap-5 sm:flex-row justify-between">
           <div className="flex flex-col gap-5">
             <h1 className="text-4xl font-bold">Finalizar compra</h1>
