@@ -2,7 +2,6 @@
 
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
-// import { Button, Divider, GridLayout } from "@crhis35/plazakit";
 import { format } from "date-fns";
 import { es } from "date-fns/locale";
 import Image from "next/image";
@@ -77,7 +76,7 @@ export default function Checkout() {
       <Header />
 
       <main className="px-16 flex flex-col gap-10 my-10">
-        <div className="flex justify-between">
+        <div className="flex flex-col gap-5 sm:flex-row justify-between">
           <div className="flex flex-col gap-5">
             <h1 className="text-4xl font-bold">Finalizar compra</h1>
 
@@ -88,12 +87,10 @@ export default function Checkout() {
           </div>
 
           <button className="bg-[#DC2626] h-10 rounded px-5">Cancelar compra</button>
-          {/* <Button className="h-10">Cancelar compra</Button> */}
         </div>
 
-        {/* <GridLayout columns='2fr 1fr' columnGap='20px'> */}
-        <div className="grid grid-cols-3 gap-5">
-          <form className="flex flex-col col-span-2 gap-[20px]">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
+          <form className="flex flex-col lg:col-span-2 gap-[20px]">
             {data.tickets.map((ticket, index) => (
               <div key={index} className="flex flex-col gap-5 bg-[#14171F] rounded-md p-5">
                 <div className="flex justify-between">
@@ -105,8 +102,7 @@ export default function Checkout() {
                   <p>{index + 1} de {data.totalTickets}</p>
                 </div>
 
-                {/* <GridLayout columns='1fr 1fr' columnGap='20px'> */}
-                <div className="grid grid-cols-2 gap-5">
+                <div className="grid sm:grid-cols-2 gap-5">
                   <div className="flex flex-col gap-3">
                     <label htmlFor={`name-${index}`}>
                       Nombres <span className="text-[#F87171]">*</span>
@@ -135,10 +131,8 @@ export default function Checkout() {
                     />
                   </div>
                 </div>
-                {/* </GridLayout> */}
 
-                {/* <GridLayout columns='1fr 1fr' columnGap='20px'> */}
-                <div className="grid grid-cols-2 gap-5">
+                <div className="grid sm:grid-cols-2 gap-5">
                   <div className="flex flex-col gap-3">
                     <label htmlFor={`email-${index}`}>
                       Correo electrónico <span className="text-[#F87171]">*</span>
@@ -167,10 +161,8 @@ export default function Checkout() {
                     />
                   </div>
                 </div>
-                {/* </GridLayout> */}
 
-                {/* <GridLayout columns='1fr 1fr' columnGap='20px'> */}
-                <div className="grid grid-cols-2 gap-5">
+                <div className="grid sm:grid-cols-2 gap-5">
                   <div className="flex flex-col gap-3">
                     <label htmlFor={`phone-${index}`}>
                       Número de teléfono celular <span className="text-[#F87171]">*</span>
@@ -199,10 +191,8 @@ export default function Checkout() {
                     />
                   </div>
                 </div>
-                {/* </GridLayout> */}
 
-                {/* <GridLayout columns='1fr 1fr' columnGap='20px'> */}
-                <div className="grid grid-cols-2 gap-5">
+                <div className="grid sm:grid-cols-2 gap-5">
                   <div className="flex flex-col gap-3">
                     <label htmlFor={`idType-${index}`}>
                       Tipo de documento <span className="text-[#F87171]">*</span>
@@ -234,15 +224,13 @@ export default function Checkout() {
                     />
                   </div>
                 </div>
-                {/* </GridLayout> */}
               </div>
             ))}
 
             <div className="flex flex-col gap-5 bg-[#14171F] rounded-md p-5">
               <h2 className="text-xl mb-2 font-bold">Método de pago</h2>
 
-              {/* <GridLayout columns='1fr 1fr 1fr' columnGap='20px'> */}
-              <div className="grid grid-cols-3 gap-5">
+              <div className="grid lg:grid-cols-3 gap-5">
                 {paymentMethods.map((method) => (
                   <div
                     key={method.id}
@@ -261,11 +249,10 @@ export default function Checkout() {
                   </div>
                 ))}
               </div>
-              {/* </GridLayout> */}
             </div>
           </form >
 
-          <div className="flex flex-col gap-5 bg-[#14171F] rounded-md p-5 h-auto">
+          <div className="flex w-full flex-col gap-5 bg-[#14171F] rounded-md p-5 h-auto self-start">
             <div>
               <h2 className="text-xl mb-2 font-bold">Resumen de la compra</h2>
               <p>{data.artist} - {data.event}</p>
@@ -283,7 +270,6 @@ export default function Checkout() {
                 </div>
 
                 <div className="w-full h-[1px] bg-[#2A3141]"></div>
-                {/* <Divider /> */}
               </div>
             ))}
 
@@ -304,14 +290,11 @@ export default function Checkout() {
               </div>
 
               <div className="w-full h-[1px] bg-[#2A3141]"></div>
-              {/* <Divider /> */}
             </div>
 
             <button className="h-10 bg-[#9333E9] rounded px-5">Confirmar pago</button>
-            {/* <Button className="h-10">Confirmar pago</Button> */}
           </div>
         </div>
-        {/* </GridLayout > */}
       </main >
 
       <Footer />

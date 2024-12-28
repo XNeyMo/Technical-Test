@@ -1,6 +1,5 @@
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
-// import { Button, GridLayout } from "@crhis35/plazakit";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -43,7 +42,7 @@ export default function Home() {
     <>
       <Header />
 
-      <main className="px-16 flex flex-col gap-10 my-10">
+      <main className="px-5 md:px-16 flex flex-col gap-10 my-10">
         <div className="flex flex-col gap-5">
           <h1 className="text-4xl font-bold">Cátalogo de artistas</h1>
 
@@ -54,7 +53,7 @@ export default function Home() {
         </div>
 
         <div className="bg-[#14171F] w-full rounded-md">
-          <form className="grid grid-cols-4 gap-5 p-5">
+          <form className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 p-5">
             <div className="relative">
               <div className="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
                 <Image src='/icons/search.svg' width={20} height={20} alt='Search' />
@@ -100,14 +99,13 @@ export default function Home() {
           </form>
         </div >
 
-        {/* <GridLayout columns='repeat(auto-fill, minmax(300px, 1fr))' columnGap='20px' rowGap='20px'> */}
         <div className="grid grid-cols-auto gap-5">
           {artists.map(artist => (
             <div key={artist.title} className="bg-[#14171F] rounded-md">
               <Image
                 src={artist.image}
                 alt={artist.title}
-                width={400}
+                width={600}
                 height={225}
                 className="rounded-t-md"
               />
@@ -118,13 +116,11 @@ export default function Home() {
 
                 <Link href="/checkout">
                   <button className="bg-[#9233E9] h-10 rounded px-5 w-full">¡Lo quiero en mi ciudad!</button>
-                  {/* <Button className="h-10 w-full">!Lo quiero en mi ciudad!</Button> */}
                 </Link>
               </div>
             </div>
           ))}
         </div>
-        {/* </GridLayout> */}
       </main >
 
       <Footer />
