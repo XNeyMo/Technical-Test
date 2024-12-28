@@ -1,11 +1,12 @@
-import { Button, Divider, GridLayout } from "@crhis35/plazakit";
+// import { Button, Divider, GridLayout } from "@crhis35/plazakit";
 import Image from "next/image";
 import React from "react";
 
 export const Footer = () => {
 	return (
 		<footer className="bg-[#0D1421] py-10 px-16 flex flex-col gap-10">
-			<GridLayout columns='repeat(4, 1fr)' columnGap='20px' rowGap='20px'>
+			{/* <GridLayout columns='repeat(4, 1fr)' columnGap='20px' rowGap='20px'> */}
+			<div className="grid grid-cols-4 gap-5">
 				<div className="flex flex-col gap-5">
 					<Image src='/icons/concertPlazaLogo.svg' width={200} height={150} alt='Concert Plaza Logo' />
 
@@ -55,15 +56,21 @@ export const Footer = () => {
 
 					<p>Suscríbete a nuestro boletín y sé el primero en enterarte de los próximos conciertos, ofertas exclusivas y novedades del mundo de la música.</p>
 
-					<div className="flex gap-5">
-						<input type="email" placeholder="Escriba su e-mail" className="bg-[#202531] py-2 px-5 rounded-md" />
+					<div className="flex gap-5 w-full">
+						<input type="email" placeholder="Escriba su e-mail" className="bg-[#202531] w-2/3 py-2 px-5 rounded-md" />
 
-						<Button className="p-2 h-10 rounded-md">Suscribirme</Button>
+						<button className="p-2 h-10 rounded-md bg-[#9233E9]">
+							Suscribirme
+						</button>
+
+						{/* <Button className="p-2 h-10 rounded-md">Suscribirme</Button> */}
 					</div>
 				</form>
-			</GridLayout>
+			</div>
+			{/* </GridLayout> */}
 
-			<Divider />
+			<div className="w-full h-[1px] bg-[#E4E4E7]"></div>
+			{/* <Divider /> */}
 
 			<div className="flex justify-between items-center">
 				<div className="flex gap-5">

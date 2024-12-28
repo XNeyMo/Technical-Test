@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Lato } from "next/font/google";
 import "./globals.css";
-import { plazaKitDarkTheme, PlazaKitProvider } from "@crhis35/plazakit";
+// import { plazaKitDarkTheme, PlazaKitProvider } from "@crhis35/plazakit";
+import "/node_modules/flag-icons/css/flag-icons.min.css";
 
 const latoSans = Lato({
   subsets: ["latin"],
@@ -23,9 +24,9 @@ export default function RootLayout({
       <body
         className={latoSans.className}
       >
-        <PlazaKitProvider theme={plazaKitDarkTheme}>
-          {children}
-        </PlazaKitProvider>
+        {/* <PlazaKitProvider theme={plazaKitDarkTheme}> */}
+        {children}
+        {/* </PlazaKitProvider> */}
       </body>
     </html>
   );

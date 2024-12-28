@@ -5,8 +5,11 @@ import React from 'react';
 
 const flags = {
 	COL: 'Colombia',
-	USA: 'USA',
-	MEX: 'Mexico',
+	BRA: 'Brazil',
+	MEX: 'México',
+	ARG: 'Argentina',
+	ECU: 'Ecuador',
+	CHI: 'Chile',
 };
 
 export const Dropdown = () => {
@@ -19,19 +22,28 @@ export const Dropdown = () => {
 
 	return (
 		<div className='relative'>
-			<button onClick={handleOpen} className='flex gap-2 h-10 items-center'>
+			<button onClick={handleOpen} className='flex w-44 gap-2 h-10 items-center justify-between'>
+				<div className='flex gap-5 items-center'>
+					<Image
+						src={`/icons/flags/${selected}.svg`}
+						width={30}
+						height={30}
+						alt={flags[selected]}
+					/>
+
+					<span>{flags[selected]}</span>
+				</div>
+
 				<Image
-					src={`/icons/flags/${selected}.svg`}
+					src='/icons/arrowDown.svg'
 					width={30}
 					height={30}
-					alt={flags[selected]}
+					alt='Arrow Down'
 				/>
-
-				<span>{flags[selected]}</span>
 			</button>
 
 			{isOpen && (
-				<div className='absolute top-12 right-0 bg-white shadow-md p-2 rounded-md'>
+				<div className='absolute top-12 w-44 right-0 p-5 rounded-md bg-[#202531]'>
 					{Object.keys(flags).map((flag) => (
 						<button
 							key={flag}

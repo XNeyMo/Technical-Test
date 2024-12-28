@@ -1,6 +1,6 @@
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
-import { Button, GridLayout, Tag } from "@crhis35/plazakit";
+// import { Button, GridLayout } from "@crhis35/plazakit";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -100,7 +100,8 @@ export default function Home() {
           </form>
         </div >
 
-        <GridLayout columns='repeat(auto-fill, minmax(300px, 1fr))' columnGap='20px' rowGap='20px'>
+        {/* <GridLayout columns='repeat(auto-fill, minmax(300px, 1fr))' columnGap='20px' rowGap='20px'> */}
+        <div className="grid grid-cols-auto gap-5">
           {artists.map(artist => (
             <div key={artist.title} className="bg-[#14171F] rounded-md">
               <Image
@@ -116,12 +117,14 @@ export default function Home() {
                 <p className="text-sm">{artist.description}</p>
 
                 <Link href="/checkout">
-                  <Button className="h-10 w-full">!Lo quiero en mi ciudad!</Button>
+                  <button className="bg-[#9233E9] h-10 rounded px-5 w-full">¡Lo quiero en mi ciudad!</button>
+                  {/* <Button className="h-10 w-full">!Lo quiero en mi ciudad!</Button> */}
                 </Link>
               </div>
             </div>
           ))}
-        </GridLayout>
+        </div>
+        {/* </GridLayout> */}
       </main >
 
       <Footer />
