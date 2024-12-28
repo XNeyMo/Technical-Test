@@ -66,24 +66,39 @@ export default function Home() {
               />
             </div>
 
-            <select className="bg-[#202531] p-2 rounded-md">
-              <option value="COL">Colombia</option>
-              <option value="BRA">Brasil</option>
-              <option value="ARG">Argentina</option>
-            </select>
+            <div className="relative">
+              <div className="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+                <Image src='/icons/location.svg' width={20} height={20} alt='Search' />
+              </div>
+              <select className="bg-[#202531] py-2 px-12 rounded-md w-full">
+                <option value="COL">Colombia</option>
+                <option value="BRA">Brasil</option>
+                <option value="ARG">Argentina</option>
+              </select>
+            </div>
 
-            <select className="bg-[#202531] p-2 rounded-md">
-              <option value="ALL">Todos los géneros</option>
-              <option value="POP">Pop</option>
-              <option value="ROCK">Rock</option>
-            </select>
+            <div className="relative">
+              <div className="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+                <Image src='/icons/gender.svg' width={20} height={20} alt='Search' />
+              </div>
+              <select className="bg-[#202531] py-2 px-12 rounded-md w-full">
+                <option value="ALL">Todos los géneros</option>
+                <option value="POP">Pop</option>
+                <option value="ROCK">Rock</option>
+              </select>
+            </div>
 
-            <select className="bg-[#202531] p-2 rounded-md">
-              <option value="ALL">Todos los artistas</option>
-              <option value="1">1</option>
-            </select>
+            <div className="relative">
+              <div className="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+                <Image src='/icons/artist.svg' width={20} height={20} alt='Search' />
+              </div>
+              <select className="bg-[#202531] py-2 px-12 rounded-md w-full">
+                <option value="ALL">Todos los artistas</option>
+                <option value="1">1</option>
+              </select>
+            </div>
           </form>
-        </div>
+        </div >
 
         <GridLayout columns='repeat(auto-fill, minmax(300px, 1fr))' columnGap='20px' rowGap='20px'>
           {artists.map(artist => (
@@ -107,7 +122,7 @@ export default function Home() {
             </div>
           ))}
         </GridLayout>
-      </main>
+      </main >
 
       <Footer />
     </>
